@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import Map from "@arcgis/core/Map";
 import MapView from "@arcgis/core/views/MapView";
+/* @ts-ignore */
 import WebTileLayer from "@arcgis/core/layers/WebTileLayer";
+/* @ts-ignore */
 import ImageryLayer from "@arcgis/core/layers/ImageryLayer"
 import GraphicLayer from "@arcgis/core/layers/GraphicsLayer"
 import FeatureLayer from "@arcgis/core/layers/FeatureLayer"
@@ -15,7 +17,7 @@ import './App.css'
 
 const MyMap = () => {
   const mapDiv = useRef(null);
-  const bsWidget = useRef(null);
+  // const bsWidget = useRef(null);
 
   const [map, setMap] = useState(null)
   const [view, setView] = useState(null)
@@ -98,8 +100,10 @@ const MyMap = () => {
 
         /* @ts-ignore */
         map.addMany([sportLayer, publicTransportLayer /* tiledLayer */])
-
+        
+        /* @ts-ignore */
         view.ui.add(bsExpand, "top-left")
+        /* @ts-ignore */
         view.ui.add(filterExpand, "top-left")
       
         
